@@ -11,7 +11,7 @@ set(0, 'defaultaxesfontsize', fontsize);
 set(0,'defaulttextfontname', fontname);
 set(0,'defaultaxesfontname', fontname);
 
-not_good = [56 58 59];
+
 path = uigetdir();
 listing = dir(path);
 ftable = struct2table(listing);
@@ -75,23 +75,3 @@ ftable.Domieszkowanie = dopant;
 ftable.Czestotliwosc = round(freq);
 table = ftable(:,8:11); 
 writetable(table,'optim_MMS_od_zera.csv','WriteRowNames',true);
-% 
-% [file, path] = uigetfile('*.txt');
-% data_from_filename = sscanf(file,'mem%f_sine_%fV_%fHz.txt');
-% n_mem = round(data_from_filename(1));
-% 
-% if n_mem == 4
-%     Rs = 47.5;
-% else
-%     Rs = 5.11;
-% end
-% 
-% file_path = strcat(path,file)
-% 
-% [U_m,I_m,t,eps] = get_mean_values(file_path,false,Rs,true);
-% % [best_parameter,min_r]=fit_Yakopcic(U_m,I_m,t,Rs);
-% % figure(10)
-% % [X,G,V,I] = Yakopcic_Memristor(t, best_parameter, U_m,Rs);
-% % plot(U_m-Rs*I_m,I_m,'--')
-% % hold on
-% % plot(V,I)
